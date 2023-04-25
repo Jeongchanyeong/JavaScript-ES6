@@ -1,55 +1,30 @@
-// var 재선언 o 재할당 o 범위가 function
-// let 재선언 x 재할당 o 범위가 {}
-// const 재선언 x 재할당 x 범위가 {}
+// 변수의 hoisting
 
-let 이름 = "kim";
-// let 이름이라는 부분은 선언, 이름 = Kim 이라는 부분은 값 할당
+// 변수 동시에 여러개 만들기
 
-var practice;
-var practice;
-// 재선언 가능
-let practice;
-let practice;
-// let은 error 재선언 불가능
-const practice = "good";
-const practice = "good";
-// const는 error 재선언 불가능
+const 나이 = 20,
+  이름 = "정찬영",
+  성별 = "남자";
 
-let firstName = "Kim";
-firstName = "Park";
-// 재할당 가능
-
-const 나이 = 26;
-나이 = 1000;
-// 재할당 불가능
-
-const 사람 = { 이름: "Kim" };
-사람.이름 = "park";
-// const로 오브젝트를 만들었을 때 오브젝트 내부 값 변경해도 에러가 안 남
-
-// 수정불가능한 오브젝트를 만들고 싶으면
-Object.freeze(사람);
-
-// function 변수의 범위
-
-function varFunction() {
-  var name1 = "jeong";
-  console.log(name1); // 가능
+// 전역 변수 = 모든 곳에서 쓸 수 있는 변수 (변수를 가장 바깥에 만들어 놓으면 어디서든 쓸 수 있음)
+function 함수() {
+  const 이름 = "찬영"; // 지역변수 (지역 변수 만들 시 바깥보다 안 쪽 변수 값 할당)
+  console.log(나이); // console창에 20
+  console.log(이름);
 }
-console.log(name1); // 에러
+// 바깥에 있에 있는 변수값은 안에서 그대로 자유롭게 사용 가능함 (물려받음)
+// 전역 변수 만드는 법
+// 1. 바깥쪽에 변수 만들기
+// 2.  window 로 전역변수 만들기 (권장)
 
-// var의 범위 = 함수 내부
-
-if (1 === 1) {
-  let name2 = "jeong";
-  console.log(name2); // 가눙
+// 연습문제
+if (true) {
+  let a = 1;
+  var b = 2;
+  if (true) {
+    let b = "3";
+  }
+  console.log(b);
 }
-console.log(name2); // 에러
-
-if (1 === 1) {
-  const name3 = "jeong";
-  console.log(name3); // 가능
-}
-console.log(name3); // 에러
-
-// let, const 범위 = {} 내부
+// console.log(b) value = 2
+// let 변수의 범위는 중괄호 내부까지 있기 때문에 없다고 봐도 무방
