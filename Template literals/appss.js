@@ -63,3 +63,13 @@ console.log(o6); // a : 1, b : 2  이유 : 제일 마지막에 읽힌 값이 나
 // const o5 = { a: 1, b: 2 };
 // const o6 = {...o5, a: 2 };
 // console.log(o6) // a : 2, b : 2
+
+function plus(a, b, c) {
+  console.log(a + b + c);
+}
+plus(1, 2, 3);
+
+const 어레이 = [10, 20, 30]; // a, b, c 에 넣고싶음
+plus(어레이[0], 어레이[1], 어레이[2]); // 기존 방법.. 너무 귀찮다
+plus.apply(undefined, 어레이); // 예전에는 이렇게 씀
+plus(...어레이); // spread operator 을 이용하면 쉽다
