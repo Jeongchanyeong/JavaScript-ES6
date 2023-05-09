@@ -1,4 +1,4 @@
-// Reference date type
+// Reference data type
 
 let 변수 = 1234;
 let 어레이 = [1, 2, 3]; //변수에 reference가 저장됨, [1,2,3]이 저기있어요 라는 reference가 저장되는 것
@@ -25,7 +25,7 @@ console.log(이름4); // {name : '박'}
 // 이름1에는 {name : '김'}이 저장되는게 아닙니다
 // {name : '김'}이 저기있어요 라는 화살표(reference)가 저장됨
 
-// 그래서 array, object 함부로 복사하면 큰일남.
+// 그래서 array, object 함부로 복사하면 큰일남
 
 // 그럼 복사하고 싶으면 어떻게 하는데요?
 let 이름5 = { name: "정찬영" };
